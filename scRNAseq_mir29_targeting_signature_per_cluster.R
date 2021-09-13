@@ -78,7 +78,7 @@ targeting_cluster_bg_adult <- function(cluster, seed, low_counts_cutoff){
     }
 }
 
-#targeting_bg(0, 'AGCACCA')
+# finding targeting signature for miR-29 (seed: AGCACCA)
 cluster_target_pvals_bg = c()
 for (i in c(0:8)){
     print(i)
