@@ -1,3 +1,6 @@
+# mir29ko is an Seurat object containing data from all 3 samples, generated in scRNAseq_harmony_integration.R
+
+library(Seurat)
 
 adult_ctrl = subset(mir29ko, subset = state == "Cre-")
 adult_flox = subset(mir29ko, subset = state == "Cre+")
