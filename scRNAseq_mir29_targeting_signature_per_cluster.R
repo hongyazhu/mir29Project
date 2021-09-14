@@ -51,10 +51,10 @@ targeting_cluster_bg_adult <- function(cluster, seed, low_counts_cutoff){
     actrl_norm_subset = actrl_norm[, names(adult_ctrl$seurat_clusters)[adult_ctrl$seurat_clusters == cluster]]
     aflox_norm_subset = aflox_norm[, names(adult_flox$seurat_clusters)[adult_flox$seurat_clusters == cluster]]
     
-    actrl_norm_filter <- actrl_norm_subset[rowMeans(actrl_norm_subset) > low_counts_cutoff,] # 10367 genes
-    aflox_norm_filter <- aflox_norm_subset[rowMeans(aflox_norm_subset) > low_counts_cutoff,] # 10336
+    actrl_norm_filter <- actrl_norm_subset[rowMeans(actrl_norm_subset) > low_counts_cutoff,] 
+    aflox_norm_filter <- aflox_norm_subset[rowMeans(aflox_norm_subset) > low_counts_cutoff,] 
     
-    actrl_norm_both <- actrl_norm_filter[rownames(actrl_norm_filter) %in% rownames(aflox_norm_filter),] # 10116 genes
+    actrl_norm_both <- actrl_norm_filter[rownames(actrl_norm_filter) %in% rownames(aflox_norm_filter),] 
     aflox_norm_both <- aflox_norm_filter[rownames(aflox_norm_filter) %in% rownames(actrl_norm_filter),]
     
     fold_change = log2(rowMeans(actrl_norm_both) / rowMeans(aflox_norm_both))
