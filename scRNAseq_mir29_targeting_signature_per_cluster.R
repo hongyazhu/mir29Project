@@ -57,7 +57,7 @@ targeting_cluster_bg_adult <- function(cluster, seed, low_counts_cutoff){
     actrl_norm_both <- actrl_norm_filter[rownames(actrl_norm_filter) %in% rownames(aflox_norm_filter),] 
     aflox_norm_both <- aflox_norm_filter[rownames(aflox_norm_filter) %in% rownames(actrl_norm_filter),]
     
-    fold_change = log2(rowMeans(actrl_norm_both) / rowMeans(aflox_norm_both))
+    fold_change = log2(rowMeans(actrl_norm_both) - rowMeans(aflox_norm_both))
     fold_change_sites = fold_change[names(fold_change) %in% gene_w_con_mirna_sites]
         
     print(nrow(actrl_norm_both))
